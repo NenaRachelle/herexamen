@@ -1,22 +1,66 @@
 <html>
 <head>
-<style>
-table, tr, td {
-    border: 3px solid black;
-    border-collapse: collapse;
-}
+    <script>
+        function start(){
+            var speler1 = document.getElementById("speler1").value;
+            var speler2 = document.getElementById("speler2").value;
+        }
+        function update(gameid,id){
+            var speler1 = document.getElementById("speler1").value;
+            var speler2 = document.getElementById("speler2").value;
+        }
+    </script>
+    Speler 1: <input type="text" placeholder="Naam speler 1" id="speler1"><br>
+    Speler 2: <input type="text" placeholder="Naam speler 2" id="speler2"><br>
+    <input type="button" value="Nieuw spel" onclick="start()"><br>
+    <br>
+    <style>
+    table, tr, td {
+        border: 3px solid black;
+        border-collapse: collapse;
+    }
 
-tr, td{
-                width: 100px;
-                height: 100px;
-            }
-</style>
+    tr, td{
+                    width: 100px;
+                    height: 100px;
+                }
+
+    td{
+        .steenrood{
+        border-radius : 100%;
+        background-color:red;
+        }
+        .steengeel{
+        border-radius : 100%;
+        background-color:yellow;
+        }
+    }
+    </style>
 </head>
+<body>
+    <?php
+    function bepaalsteen($x, $y){
+    global $speelveld;
+        switch($speelveld[$x][$y]){
+            case 1:
+                return "steenblauw";
+            case 2:
+                return "steenrood";
+            default:
+                return "";
+        }
+    }
+    ?>
+</body>
 </html>
 
 
 <?php
+include connection.php;
 
+$newgame = "CREATE TABLE newgame(gameid int, speler1 varchar(255), speler2 varchar(255), winnaar varchar(255))";
+$inhoud = "INSERT INTO newgame(speler1, speler2) VALUES ('$speler1','$speler2')";
+            
 tabelmaken();
 
 function tabelmaken(){
@@ -34,3 +78,10 @@ function tabelmaken(){
     echo"</table>";
 }
 
+echo "<br>";
+echo'<input type="button" value="Rood wint" onclick="update()">';
+echo'<input type="button" value="Geel wint" onclick="update()">';
+
+echo 'De winnaar is';
+
+?>
