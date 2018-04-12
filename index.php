@@ -1,8 +1,62 @@
+<html>
+<head>
+<style>
+table, tr, td {
+    border: 1px solid black;
+}
+
+tr, td{
+                width: 80px;
+                height: 80px;
+            }
+</style>
+<table>
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+</head>
+</html>
+
+
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+tabelmaken();
+
+function tabelmaken(){
+    $b=7;
+    $h=6;
+    echo"<table>";
+    echo"<tr>";
+        for ($y=0;$y<$h;$y++){
+            echo"<td>";  
+                for ($x=0;$x<$b;$x++){
+                }
+                   // if($x%2){}
+            echo"</td>";
+            echo "</tr>";
+            }
+    echo"</table>";
+}
 
