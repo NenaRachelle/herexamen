@@ -10,3 +10,6 @@ $sn="localhost";
             $results = "SELECT * FROM newgame;";
             
             $conn->query($sql);
+            
+            $sql = "CREATE TABLE newgame(gameid int, speler1 varchar(255), speler2 varchar(255), winnaar varchar(255))";
+            $update = "INSERT INTO `newgame`(`speler1`, `speler2`) VALUES ('$speler1','$speler2')";
