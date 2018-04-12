@@ -4,15 +4,21 @@
         function start(){
             var speler1 = document.getElementById("speler1").value;
             var speler2 = document.getElementById("speler2").value;
+            document.location = "index.php?speler1="+speler1+"&speler2="+speler2;
+            
+            var newgame = "CREATE TABLE newgame(gameid int, speler1 varchar(255), speler2 varchar(255), winnaar varchar(255))";
+            var inhoud = "INSERT INTO newgame(speler1, speler2) VALUES ('$speler1','$speler2')";
         }
+        
         function update(gameid,id){
             var speler1 = document.getElementById("speler1").value;
             var speler2 = document.getElementById("speler2").value;
+            document.location = "index.php?speler1="+speler1+"&speler2="+speler2;
         }
     </script>
     Speler 1: <input type="text" placeholder="Naam speler 1" id="speler1"><br>
     Speler 2: <input type="text" placeholder="Naam speler 2" id="speler2"><br>
-    <input type="button" value="Nieuw spel" onclick="start()"><br>
+    <input type="button" value="Nieuw spel" onclick="start(), newgame()"><br>
     <br>
     <style>
     table, tr, td {
@@ -56,7 +62,7 @@
 
 
 <?php
-include connection.php;
+include 'connection.php';
 
 $newgame = "CREATE TABLE newgame(gameid int, speler1 varchar(255), speler2 varchar(255), winnaar varchar(255))";
 $inhoud = "INSERT INTO newgame(speler1, speler2) VALUES ('$speler1','$speler2')";
@@ -79,9 +85,9 @@ function tabelmaken(){
 }
 
 echo "<br>";
-echo'<input type="button" value="Rood wint" onclick="update()">';
-echo'<input type="button" value="Geel wint" onclick="update()">';
+echo'<input type="button" value="Rood wint" onclick="$rood">';
+echo'<input type="button" value="Geel wint" onclick="$geel">';
 
-echo 'De winnaar is';
-
+$geel = "Geel wint";
+$rood = "Rood wint";
 ?>
