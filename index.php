@@ -2,40 +2,15 @@
 <head>
 <style>
 table, tr, td {
-    border: 1px solid black;
+    border: 3px solid black;
+    border-collapse: collapse;
 }
 
 tr, td{
-                width: 80px;
-                height: 80px;
+                width: 100px;
+                height: 100px;
             }
 </style>
-<table>
-    <tr>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-    </tr>
-</table>
 </head>
 </html>
 
@@ -49,11 +24,10 @@ function tabelmaken(){
     $h=6;
     echo"<table>";
     echo"<tr>";
-        for ($y=0;$y<$h;$y++){
-            echo"<td>";  
+        for ($y=0;$y<$h;$y++){  
                 for ($x=0;$x<$b;$x++){
+                    echo"<td id=vakje".$x.",".$y.">";
                 }
-                   // if($x%2){}
             echo"</td>";
             echo "</tr>";
             }
