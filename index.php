@@ -4,7 +4,8 @@
 
         <span>Rood:</span><input type="text" name="speler1" id="speler1" placeholder="Naam speler 1"> 
         <span>Geel:</span><input type="text" name="speler2" id="speler2" placeholder="Naam speler 2">
-        <input type=submit name="submit" onclick="updaten($conn)">
+        <input type=submit name="submit" onclick="updaten($conn)"><br>
+        
     </form> 
 <br>
     <script>
@@ -22,7 +23,7 @@
         background-color: grey;
         border-radius : 100%;
     }
-    td:checked + label {
+    td::active {
         background: red;
         color: red;
         border-radius : 100%;
@@ -41,29 +42,39 @@
     }
 
     td, tr{
-        .steenrood:onclick{
+        .steenrood:active{
         border-radius : 100%;
         background-color:red;
         }
         
-        .steengeel:onclick{
+        .steengeel:active{
         border-radius : 100%;
         background-color:yellow;
         }
     
-        .plaatsR:hover, .dropbtn:focus {
+        .plaatsR:hover, .show:focus {
         background-color: darkred;
         }
         
-        .plaatsG:hover, .dropbtn:focus {
+        .plaatsG:hover, .showG:focus {
         background-color: darkgoldenrod;
         }
-        .showR {display:steengeel;
+        
+    }
+    
+    td{
+        #steenrood {
+        display: none;
+        }
+
+        #steenrood:checked+:active{
+            background: red;
         }
     }
     
         
     </style>
+<!--    <input type="checkbox" id="steenrood"/>-->
 </head>
 <body>
     <?php
@@ -72,8 +83,6 @@ include 'connection.php';
 include 'functions.php';
             
 tabelmaken();
-
-
 
 
 ?>
@@ -96,25 +105,15 @@ echo'<input type="button" value="Geel wint" onclick="geel()">';
         echo "Speler 2 heeft gewonnen";
     }
 
-
-//if ($conn->query($resultaten) === TRUE) {
-//    echo "<ul>";
-//    while($row = $results->fetch_assoc()){
-//        echo "<li>";
-//        echo $speler1 + $speler2 + $winnaar ['speler1'+'speler2' +'winnaar'];
-//        echo "</li>";
-//    }
-//} else {
-//    echo "Error" . $conn->error;
-//}
-  
-//    $resultaten = "SELECT * FROM `newgame`";
-//            
-//    $stand = $conn->query($resultaten);
-//    //echo $stand;
-//    
-//    $extrainfo ++;
-//    $extrainfo = "onclick=klik($x,$y)";
-    //console.log($extrainfo);
+    $results = mysqli_query($conn,"SELECT `speler1`, `speler2` FROM `newgame`");
+    
+    
+    echo "<ul>";
+            echo "<li>";
+           //while ($row = $result->fetch_assoc()) {
+                return $results;
+           //}
+           
+   
 ?>
 

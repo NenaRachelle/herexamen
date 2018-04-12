@@ -4,7 +4,7 @@
         function updaten($conn){ 
             var speler1 = document.getElementById("speler1").value;
             var speler2 = document.getElementById("speler2").value;
-            document.location = "connection.php?speler1="+speler1+"&speler2="+speler2;
+            //document.location = "connection.php?speler1="+speler1+"&speler2="+speler2;
 //            
 //            var newgame = "CREATE TABLE newgame(gameid int, speler1 varchar(255), speler2 varchar(255), winnaar varchar(255))";
            // var inhoud = "INSERT INTO newgame(speler1, speler2) VALUES ('$speler1','$speler2')";
@@ -14,7 +14,7 @@
         function update(){
             var speler1 = document.getElementById("speler1").value;
             var speler2 = document.getElementById("speler2").value;
-            document.location = "index.php?speler1="+speler1+"&speler2="+speler2;
+            //document.location = "index.php?speler1="+speler1+"&speler2="+speler2;
         }
 
         function steen(){
@@ -54,13 +54,4 @@ function bepaalsteen($x, $y){
         }
     }
     
-    function start(){
-        
-    }
-    
-
-    
-    function updaten($sql){
-        $conn->query($sql); 
-        }
-        
+      
