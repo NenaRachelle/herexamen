@@ -1,21 +1,23 @@
 <html>
 <head>
     <script>
-        function start(){
+        function updaten($conn){ 
             var speler1 = document.getElementById("speler1").value;
             var speler2 = document.getElementById("speler2").value;
-            document.location = "index.php?speler1="+speler1+"&speler2="+speler2;
-            
-            var newgame = "CREATE TABLE newgame(gameid int, speler1 varchar(255), speler2 varchar(255), winnaar varchar(255))";
-            var inhoud = "INSERT INTO newgame(speler1, speler2) VALUES ('$speler1','$speler2')";
-    
+            document.location = "connection.php?speler1="+speler1+"&speler2="+speler2;
+//            
+//            var newgame = "CREATE TABLE newgame(gameid int, speler1 varchar(255), speler2 varchar(255), winnaar varchar(255))";
+           // var inhoud = "INSERT INTO newgame(speler1, speler2) VALUES ('$speler1','$speler2')";
+//    
     }
         
-        function update(gameid,id){
+        function update(){
             var speler1 = document.getElementById("speler1").value;
             var speler2 = document.getElementById("speler2").value;
             document.location = "index.php?speler1="+speler1+"&speler2="+speler2;
         }
+
+
     </script>
 </head>
 </html>
@@ -53,10 +55,16 @@ function bepaalsteen($x, $y){
         
     }
     
-    function rood(){
+    function rood($rood){
+        $rood = "UPDATE `newgame` SET `winnaar`=[Rood heeft gewonnen] WHERE `winnaar`";
         echo "Rood heeft gewonnen";
     }
     
-        function geel(){
+        function geel($geel){
+        $geel = "UPDATE `newgame` SET `winnaar`=[Geel heeft gewonnen] WHERE `winnaar`";
         echo "Geel heeft gewonnen";
     }
+    
+    function updaten($sql){
+        $conn->query($sql); 
+        }
