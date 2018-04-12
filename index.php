@@ -105,14 +105,15 @@ echo'<input type="button" value="Geel wint" onclick="geel()">';
         echo "Speler 2 heeft gewonnen";
     }
 
-    $results = mysqli_query($conn,"SELECT `speler1`, `speler2` FROM `newgame`");
+    $results = mysqli_query($conn,"SELECT * FROM `newgame`");
     
     
     echo "<ul>";
             echo "<li>";
-           //while ($row = $result->fetch_assoc()) {
-                return $results;
-           //}
+           while ($row = $result->fetch_assoc()) {
+                echo $row['speler1'];
+                echo $row['speler2'];
+           }
            
    
 ?>
