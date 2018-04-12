@@ -52,3 +52,11 @@ function bepaalsteen($x, $y){
     function start(){
         
     }
+    
+    function rood(){
+        echo "Rood heeft gewonnen";
+    }
+    
+        function geel(){
+        echo "Geel heeft gewonnen";
+    }

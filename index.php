@@ -35,15 +35,9 @@ require 'functions.php';
 tabelmaken();
 
 echo "<br>";
-echo'<input type="button" value="Rood wint" onclick="$rood">';
-echo'<input type="button" value="Geel wint" onclick="$geel">';
+echo'<input type="button" value="Rood wint" onclick="rood()">';
+echo'<input type="button" value="Geel wint" onclick="geel()">';
 
-$geel = "Geel wint";
-$rood = "Rood wint";
-
-function update(){
-    
-}
 ?>
 </body>
 </html>
