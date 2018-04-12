@@ -17,6 +17,9 @@
             document.location = "index.php?speler1="+speler1+"&speler2="+speler2;
         }
 
+        function steen(){
+            
+        }
 
     </script>
 </head>
@@ -55,16 +58,9 @@ function bepaalsteen($x, $y){
         
     }
     
-    function rood($rood){
-        $rood = "UPDATE `newgame` SET `winnaar`=[Rood heeft gewonnen] WHERE `winnaar`";
-        echo "Rood heeft gewonnen";
-    }
-    
-        function geel($geel){
-        $geel = "UPDATE `newgame` SET `winnaar`=[Geel heeft gewonnen] WHERE `winnaar`";
-        echo "Geel heeft gewonnen";
-    }
+
     
     function updaten($sql){
         $conn->query($sql); 
         }
+        

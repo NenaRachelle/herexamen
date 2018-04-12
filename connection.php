@@ -12,4 +12,3 @@ $conn = new mysqli($sn, $un, $pw, $db);
     $sql = "INSERT INTO `newgame`(`speler1`, `speler2`) VALUES ('$speler1','$speler2')";
     
     $conn->query($sql);
-    echo $sql;

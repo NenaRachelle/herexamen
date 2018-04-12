@@ -8,13 +8,31 @@
     </form> 
 <br>
     <script>
-        print_r = document.write(stand);
+        //print_r = document.write(stand);
     </script>
 <br>
     <style>
     table, tr, td {
         border: 3px solid black;
         border-collapse: collapse;
+        cursor: pointer;
+    }
+    
+    td:hover{
+        background-color: grey;
+        border-radius : 100%;
+    }
+    td:checked + label {
+        background: red;
+        color: red;
+        border-radius : 100%;
+    }
+
+    td label {
+        border-radius : 100%;
+        background: grey;
+        width: 100px;
+        height: 100px;
     }
 
     tr, td{
@@ -22,16 +40,29 @@
         height: 100px;
     }
 
-    td{
-        .steenrood{
+    td, tr{
+        .steenrood:onclick{
         border-radius : 100%;
         background-color:red;
         }
-        .steengeel{
+        
+        .steengeel:onclick{
         border-radius : 100%;
         background-color:yellow;
         }
+    
+        .plaatsR:hover, .dropbtn:focus {
+        background-color: darkred;
+        }
+        
+        .plaatsG:hover, .dropbtn:focus {
+        background-color: darkgoldenrod;
+        }
+        .showR {display:steengeel;
+        }
     }
+    
+        
     </style>
 </head>
 <body>
@@ -42,9 +73,7 @@ include 'functions.php';
             
 tabelmaken();
 
-echo "<br>";
-echo'<input type="button" value="Rood wint" onclick="rood($rood)">';
-echo'<input type="button" value="Geel wint" onclick="geel($geel)">';
+
 
 
 ?>
@@ -53,7 +82,19 @@ echo'<input type="button" value="Geel wint" onclick="geel($geel)">';
 
 <?php
 
+echo "<br>";
+echo'<input type="button" value="Rood wint" onclick="rood()">';
+echo'<input type="button" value="Geel wint" onclick="geel()">';
 
+    function rood(){
+        $rood = "UPDATE `newgame` SET `winnaar`=[Rood heeft gewonnen] WHERE `winnaar`";
+        echo "Speler 1 heeft gewonnen";
+    }
+    
+        function geel(){
+        $geel = "UPDATE `newgame` SET `winnaar`=[Geel heeft gewonnen] WHERE `winnaar`";
+        echo "Speler 2 heeft gewonnen";
+    }
 
 
 //if ($conn->query($resultaten) === TRUE) {
